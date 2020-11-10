@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shooter Game</title>
+  <link type="text/css" rel="stylesheet" href="game.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/icon128.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2196F3">
+  <script src="Game.js" type="text/javascript"></script>
+  <script src="Entity.js" type="text/javascript"></script>
+  <script src="Character.js" type="text/javascript"></script>
+  <script src="Player.js" type="text/javascript"></script>
+  <script src="Opponent.js" type="text/javascript"></script>
+  <script src="Shot.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <button id="install" class="gamebutton" aria-label="Instalar" hidden>Instalar APP...</button>
+  <button id="pause" class="gamebutton" onclick="this.blur();">Pausa</button>
+  <button id="reset" class="gamebutton" onclick="this.blur();">NUEVA PARTIDA</button>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load',()=>{
+        navigator.serviceWorker.register('service-worker.js').then((reg)=>{
+          console.log("Service worker registered,reg");
+        })
+      })
+    }
+  </script>
+  <!--Importar el fichero de instalación-->
+  <script src="install.js"></script>
+</body>
+
+</html>
